@@ -38,7 +38,7 @@ const MoodLogger = () => {
   return (
     <div className='mood-logger'>
       <div className="heading">
-        <h1>Keep record of your feelings everyday</h1>
+        <h1>Keep record of your feelings everyday...</h1>
       </div>
       <div className='form'>
         <form onSubmit={handleAddMood}>
@@ -47,7 +47,10 @@ const MoodLogger = () => {
           />
           <button>Submit feeling</button>
         </form>
-       <table border="1">
+
+        {
+          allMoods.length > 0 &&(
+            <table border="1">
         <thead>
           <tr>
             <th>Date</th>
@@ -67,6 +70,9 @@ const MoodLogger = () => {
             }
           </tbody>
        </table>
+          )
+        }
+      
       </div>
     </div>
   )
